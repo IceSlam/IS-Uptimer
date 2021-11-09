@@ -6,6 +6,8 @@ const port = 20345
 app.get('/', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('X-Powered-By', 'ISUpNGN/0.1a');
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
   var uptime = process.uptime();
   res.end(
       JSON.stringify({
@@ -26,4 +28,4 @@ app.get('/', (req, res) => {
   );
 })
 
-app.listen(port, () => {})
+app.listen(process.env.APP_PORT || port, process.env.APP_IP || 'localhost', () => {})
