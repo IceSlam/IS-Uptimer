@@ -1,2 +1,1 @@
-# IS-Uptimer
-IceSlam's Server Uptime monitor on Node.js
+# IceSlam's Server uptime monitor on Node.js with REST API
