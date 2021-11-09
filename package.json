@@ -1,6 +1,6 @@
 {
-  "name": "servermon",
-  "version": "0.0.0",
+  "name": "isupngn",
+  "version": "0.1a",
   "private": true,
   "scripts": {
     "start": "node ./monitor.js",
