@@ -29,6 +29,6 @@ app.get('/', (req, res) => {
     );
 })
 
-app.listen(20345, '0.0.0.0', () => {
+app.listen(process.env.APP_PORT || 20345, process.env.APP_IP || '0.0.0.0', () => {
     console.log('Uptime monitor ISUpNGN started on 0.0.0.0:20345')
 })
