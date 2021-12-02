@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
                 hours: Math.trunc((Math.floor(os.uptime() / 60 / 60 / 24) - Math.floor(os.uptime() / (60*60)) / 24) * -24),
                 minutes: Math.floor(os.uptime() % (60*60) / 60),
                 seconds: Math.floor(os.uptime() % 60),
-                total_seconds: Math.trunc(os.uptime())
+                total_seconds: Math.trunc(os.uptime()),
+                is_online: os.uptime() ? true : false
             },
             powered_by: {
                 platform: 'ISUpNGN/0.1a',
