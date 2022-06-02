@@ -1,13 +1,13 @@
 {
-  "name": "isupngn",
-  "version": "0.1.0",
+  "name": "iceslam-server-uptime-monitor",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "start": "node ./monitor.js",
     "dev" : "nodemon ./monitor.js --watch"
   },
   "dependencies": {
-    "express": "~4.16.1",
-    "nodemon": "^2.0.15"
+    "express": "latest",
+    "nodemon": "latest"
   }
 }

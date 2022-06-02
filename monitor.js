@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
 const os = require('os')
-const port = 20345
+const port = process.env.APP_PORT || 20345
 
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('X-Powered-By', 'ISUpNGN/0.1a');
+    res.setHeader('X-Powered-By', 'ISUpNGN/0.2a');
+    res.setHeader('X-Developed-By', 'IceSlam');
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
     var uptime = process.uptime();
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
                 is_online: os.uptime() ? true : false
             },
             powered_by: {
-                platform: 'ISUpNGN/0.1a',
+                platform: 'ISUpNGN/0.2a',
                 author: 'IceSlam',
                 website: 'https://iceslam.ru',
                 git: 'https://github.com/iceslam/ISUpNGN'
