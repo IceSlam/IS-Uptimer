@@ -5,7 +5,7 @@ const port = process.env.APP_PORT || 20345
 
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('X-Powered-By', 'ISUpNGN/0.2a');
+    res.setHeader('X-Powered-By', 'ISUpNGN/0.3a');
     res.setHeader('X-Developed-By', 'IceSlam');
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
@@ -22,10 +22,11 @@ app.get('/', (req, res) => {
                 is_online: os.uptime() ? true : false
             },
             powered_by: {
-                platform: 'ISUpNGN/0.2a',
+                platform: 'ISUpNGN/0.3a',
                 author: 'IceSlam',
                 website: 'https://iceslam.ru',
-                git: 'https://github.com/iceslam/ISUpNGN'
+                git: 'https://github.com/iceslam/ISUpNGN',
+                docker: 'https://hub.docker.com/r/iceslam/server-uptime-rest'
             }
         })
     );
