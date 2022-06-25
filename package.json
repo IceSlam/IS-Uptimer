@@ -1,13 +1,14 @@
 {
   "name": "iceslam-server-uptime-monitor",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "start": "node ./monitor.js",
-    "dev" : "nodemon ./monitor.js --watch"
+    "dev": "nodemon ./monitor.js --watch"
   },
   "dependencies": {
     "express": "latest",
+    "moment": "^2.29.3",
     "nodemon": "latest"
   }
 }

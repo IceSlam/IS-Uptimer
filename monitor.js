@@ -1,18 +1,19 @@
 const express = require('express')
 const app = express()
 const os = require('os')
+const moment = require('moment')
 const port = process.env.APP_PORT || 20345
 
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('X-Powered-By', 'ISUpNGN/0.3a');
+    res.setHeader('X-Powered-By', 'ISUpNGN/0.4a');
     res.setHeader('X-Developed-By', 'IceSlam');
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
     var uptime = process.uptime();
     res.end(
         JSON.stringify({
-            server_time: new Date(),
+            server_time: moment(new Date()).format('DD.MM.YYYY HH:mm:ss'),
             uptime: {total_uptime: Math.floor(os.uptime() / 86400) + ' дней ' + Math.trunc((Math.floor(os.uptime() / 60 / 60 / 24) - Math.floor(os.uptime() / (60*60)) / 24) * -24) + ' часов ' + Math.floor(os.uptime() % (60*60) / 60) + ' минут ' + Math.floor(os.uptime() % 60) + ' секунд',
                 days: Math.floor(os.uptime() / 86400),
                 hours: Math.trunc((Math.floor(os.uptime() / 60 / 60 / 24) - Math.floor(os.uptime() / (60*60)) / 24) * -24),
@@ -22,7 +23,7 @@ app.get('/', (req, res) => {
                 is_online: os.uptime() ? true : false
             },
             powered_by: {
-                platform: 'ISUpNGN/0.3a',
+                platform: 'ISUpNGN/0.4a',
                 author: 'IceSlam',
                 website: 'https://iceslam.ru',
                 git: 'https://github.com/iceslam/ISUpNGN',
