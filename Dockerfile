@@ -1,4 +1,4 @@
-FROM node:16.15.0
+FROM node:16.15.0-alpine3.15
 
 ENV APP_ROOT /
 ENV NODE_ENV production

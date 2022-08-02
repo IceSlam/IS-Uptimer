@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const os = require('os')
 const moment = require('moment')
-const port = process.env.APP_PORT || 20345
 
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -10,11 +9,11 @@ app.get('/', (req, res) => {
     res.setHeader('X-Developed-By', 'IceSlam');
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
-    var uptime = process.uptime();
     res.end(
         JSON.stringify({
             server_time: moment(new Date()).format('DD.MM.YYYY HH:mm:ss'),
-            uptime: {total_uptime: Math.floor(os.uptime() / 86400) + ' дней ' + Math.trunc((Math.floor(os.uptime() / 60 / 60 / 24) - Math.floor(os.uptime() / (60*60)) / 24) * -24) + ' часов ' + Math.floor(os.uptime() % (60*60) / 60) + ' минут ' + Math.floor(os.uptime() % 60) + ' секунд',
+            uptime: {
+                total_uptime: Math.floor(os.uptime() / 86400) + ' дней ' + Math.trunc((Math.floor(os.uptime() / 60 / 60 / 24) - Math.floor(os.uptime() / (60*60)) / 24) * -24) + ' часов ' + Math.floor(os.uptime() % (60*60) / 60) + ' минут ' + Math.floor(os.uptime() % 60) + ' секунд',
                 days: Math.floor(os.uptime() / 86400),
                 hours: Math.trunc((Math.floor(os.uptime() / 60 / 60 / 24) - Math.floor(os.uptime() / (60*60)) / 24) * -24),
                 minutes: Math.floor(os.uptime() % (60*60) / 60),
