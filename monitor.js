@@ -5,7 +5,7 @@ const moment = require('moment')
 
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('X-Powered-By', 'ISUpNGN/0.4a');
+    res.setHeader('X-Powered-By', 'ISUpNGN/0.5a');
     res.setHeader('X-Developed-By', 'IceSlam');
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
                 is_online: os.uptime() ? true : false
             },
             powered_by: {
-                platform: 'ISUpNGN/0.4a',
+                platform: 'ISUpNGN/0.5a',
                 author: 'IceSlam',
                 website: 'https://iceslam.ru',
                 git: 'https://github.com/iceslam/ISUpNGN',
